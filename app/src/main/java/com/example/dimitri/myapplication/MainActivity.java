@@ -1,6 +1,7 @@
 package com.example.dimitri.myapplication;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
-
+    final static private int FORM_REQUEST = 1;
     TextView textViewName;
     Button buttonNext;
 
@@ -31,11 +32,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1){
+            if (resultCode == RESULT_OK && data.getExtras() != null){
+                String userName = data.getExtras().getString(FormActivity.NAME_KEY);
+                textViewName.setText(userName);
+            }
+        }
+    }
+
+    @Override
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.activity_main_button_next:
                 Intent intent = new Intent(this, FormActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, FORM_REQUEST);
                 break;
         }
     }
