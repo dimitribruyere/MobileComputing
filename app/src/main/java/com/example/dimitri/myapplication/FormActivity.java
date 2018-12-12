@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.List;
+
 public class FormActivity extends AppCompatActivity
 {
     public final static String NAME_KEY = "USER_NAME";
@@ -40,7 +42,9 @@ public class FormActivity extends AppCompatActivity
 
     private void saveData() {
         String name = editTextName.getText().toString();
-        DataManager.getInstance().setName(name);
+        if(!name.isEmpty()){
+            DataManager.getInstance().addName(name);
+        }
         finish();
     }
 }

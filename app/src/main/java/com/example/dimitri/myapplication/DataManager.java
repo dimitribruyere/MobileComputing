@@ -1,11 +1,15 @@
 package com.example.dimitri.myapplication;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DataManager {
 
     private static DataManager INSTANCE;
-    public String name;
+    public List<String> names;
 
     private DataManager(){
+        names = new ArrayList<>();
     }
 
     public static DataManager getInstance(){
@@ -19,11 +23,15 @@ public class DataManager {
         DataManager.INSTANCE = INSTANCE;
     }
 
-    public String getName() {
-        return name;
+    public List<String> getNames() {
+        return names;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNames(List<String> names) {
+        this.names = names;
+    }
+
+    public void addName(String name){
+        this.names.add(name);
     }
 }
