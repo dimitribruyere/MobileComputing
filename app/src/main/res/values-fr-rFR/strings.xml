@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">TP Application Mobile</string>
     <string name="activity_main_button_next">SUIVANT</string>
+    <string name="activity_main_textview_name">Bienvenue</string>
+    <string name="activity_form_button_validate">VALIDER</string>
+    <string name="activity_form_placeholer">Entrez votre message ici</string>
 </resources>

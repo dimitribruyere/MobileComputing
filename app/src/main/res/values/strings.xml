@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Practical Mobile Computing</string>
     <string name="activity_main_button_next">NEXT</string>
+    <string name="activity_main_textview_name">Welcome</string>
+    <string name="activity_form_button_validate">VALIDATE</string>
+    <string name="activity_form_placeholer">Enter message here</string>
 </resources>
